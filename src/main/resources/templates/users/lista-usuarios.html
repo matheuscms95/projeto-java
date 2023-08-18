@@ -21,6 +21,7 @@
                                             <th>Id</th>
                                             <th>Nome</th>
                                             <th>Cpf</th>
+                                            <th>Email</th>
                                             <th>Telefone</th>
                                             <th>Sobre Você</th>
                                             <th>-</th>
@@ -32,6 +33,7 @@
                                             <td th:text="${user.id}"></td>
                                             <td th:text="${user.nome}"></td>
                                             <td th:text="${user.cpf}"></td>
+                                            <td th:text="${user.emai}"></td>
                                             <td th:text="${user.telefone}"></td>
                                             <td th:text="${user.sobreVoce}"></td>
                                             <td><a th:href="@{'/usuarios/' + ${user.id} }" class="btn btn-warning"> Alterar</a></td>
