@@ -1,0 +1,48 @@
+<div th:replace="shared/top" xmlns:th="http://www.w3.org/1999/xhtml"> </div>
+    <div class="container" xmlns:th="http://www.w3.org/1999/xhtml">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row d-flex justify-content-around">
+<!--                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>-->
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Criar um novo usuario</h1>
+                            </div>
+                            <form class="user" th:action="@{'/usuarios/alterar/' + ${user.id}}" method="post" onsubmit="return confirm('Tem certeza que deseja alterar?')">
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" name="nome" th:value="${user.nome}" class="form-control form-control-user"
+                                            placeholder="Nome">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="cpf" th:value="${user.cpf}" class="form-control form-control-user"
+                                            placeholder="CPF">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="telefone" th:value="${user.telefone}" class="form-control form-control-user"
+                                        placeholder="Telefone">
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 mb-3 mb-sm-0">
+                                        <textarea  name="sobreVoce" rows="20" cols="10" th:text="${user.sobreVoce}" class="form-control"
+                                                   placeholder="Sobre" style="height:150px"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
+                                    Alterar usuario
+                                </button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<div th:replace="shared/bottom" xmlns:th="http://www.w3.org/1999/xhtml"> </div>

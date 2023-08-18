@@ -1,0 +1,52 @@
+<div th:replace="shared/top" xmlns:th="http://www.w3.org/1999/xhtml"> </div>
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
+                    <p class="mb-4">Lista de Usuarios do sistema</p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Dados de usuarios</h6>
+                            <a class="btn btn-primary" href="/usuarios/cadastrar"> Novo usuario</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Nome</th>
+                                            <th>Cpf</th>
+                                            <th>Telefone</th>
+                                            <th>Sobre Você</th>
+                                            <th>-</th>
+                                            <th>-</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="user : ${users}" xmlns:th="http://www.w3.org/1999/xhtml">
+                                            <td th:text="${user.id}"></td>
+                                            <td th:text="${user.nome}"></td>
+                                            <td th:text="${user.cpf}"></td>
+                                            <td th:text="${user.telefone}"></td>
+                                            <td th:text="${user.sobreVoce}"></td>
+                                            <td><a th:href="@{'/usuarios/' + ${user.id} }" class="btn btn-warning"> Alterar</a></td>
+                                            <td><a th:href="@{'/usuarios/excluir/' + ${user.id} }" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')"> Excluir</a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+<div th:replace="shared/bottom" xmlns:th="http://www.w3.org/1999/xhtml"> </div>
